@@ -1,0 +1,6 @@
+Z_Z Test struct with new field separator
+
+📚 Person :{
+  name :> string :,D
+  page :> number
+:}

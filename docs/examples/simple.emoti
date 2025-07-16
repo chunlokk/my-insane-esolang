@@ -1,0 +1,16 @@
+Z_Z Simple EmotiLang test program
+
+Z_Z Variable declaration
+:< myNumber :> :0 <3 :0 42 ;)  Z_Z let myNumber : number = 42;
+
+Z_Z Print the number
+:P myNumber ;)                 Z_Z console.log(myNumber);
+
+Z_Z Simple function
+🤖 sayHello :( :) :> :0 :{    Z_Z function sayHello() -> number
+  :P :L "Hello, EmotiLang!" ;)
+  /o/ :0 0 ;)
+:}
+
+Z_Z Call the function, and assign return value to _ to ignore
+:< _ :> :0 <3 sayHello :( :) ;)

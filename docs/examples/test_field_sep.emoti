@@ -1,0 +1,17 @@
+Z_Z Test file showing the new :,D field separator
+
+Z_Z Struct with multiple fields
+📚 Person : :{
+  :-name :> string :,D
+  :-age :> number :,D
+  :-isActive :> X_X
+:}
+
+Z_Z Function with multiple parameters
+🤖 :-createPerson :{ :-name : string :,D :-age : number :} :> Person :{
+  Z_Z Function body would go here
+  o/ ;)
+:}
+
+Z_Z Function call with multiple arguments would use :,D too
+Z_Z :-createPerson :{ :L "John" :,D :0 25 :}

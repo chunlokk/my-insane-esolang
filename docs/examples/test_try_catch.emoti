@@ -1,0 +1,10 @@
+🕷️ :{
+  :P :L "Attempting risky operation" ;)
+  Z_Z Some risky code here
+  💥 :L "Something went wrong!" ;)
+  💥 errorMessage ;)
+  💥 :L "Division by zero error" ;)
+:} 🕸️ error :{
+  :P :L "Caught an error: " ;)
+  :P error ;)
+:}

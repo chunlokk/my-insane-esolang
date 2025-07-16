@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmotiLang Playground</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎭 EmotiLang Playground</h1>
+        
+        <div class="input-section">
+            <h2>Input</h2>
+            <textarea id="input" placeholder="Enter your EmotiLang code here...">
+Z_Z This is a comment
+
+Z_Z Variable declaration
+:&lt; myNumber :&gt; :0 &lt;3 :0 42 ;)
+
+Z_Z Assignment and operators
+myNumber &lt;3 :0 2 :+) :0 3 *_* :0 5 ;)
+
+Z_Z Inputs and outputs
+:&lt; myInput :&gt; :L &lt;3 O_O ;)
+:P myInput ;)
+
+Z_Z Function declaration
+🤖 factorial :( n :&gt; :0 :) :&gt; :0 :{
+    (╭ರ_•́) n =) :0 0 :{
+        /o/ :0 1 ;)
+    :}
+    /o/ n *_* factorial :( n :-( :0 1 :) ;)
+:}
+
+Z_Z Function call and print
+:P factorial :( :0 5 :) ;)
+
+Z_Z While loop
+:&lt; counter :&gt; :0 &lt;3 :0 0 ;)
+(⸝⸝๑﹏๑⸝⸝) counter &lt;:( :0 5 :{
+    :P counter ;)
+    counter &lt;3 counter :+) :0 1 ;)
+:}
+
+Z_Z Try-catch
+🕷️ :{
+    💥 :L &quot;Something went wrong&quot; ;)
+:} 🕸️ e :{
+    :P :L &quot;Caught error: &quot; ;)
+:}
+            </textarea>
+            <button id="submit-btn" class="primary-btn">Compile</button>
+        </div>
+
+        <div class="output-grid">
+            <div class="output-box">
+                <h3>Debug Output</h3>
+                <pre id="debug-output"></pre>
+            </div>
+            
+            <div class="output-box">
+                <h3>Transpiled JavaScript</h3>
+                <pre id="transpiled-code"></pre>
+                <button id="run-btn" class="secondary-btn" disabled>Run Code</button>
+            </div>
+            
+            <div class="output-box">
+                <h3>Program Output</h3>
+                <pre id="program-output"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+🤖 factorial :( n :> :0 :) :> :0 :{           Z_Z def factorial(n: int) -> int:
+  (╭ರ_•́) n =) :0 1 :{                         Z_Z if n == 1:
+    /o/ :0 1 ;)                                Z_Z return 1 
+  :}
+  /o/ n :+) factorial :( n :-( :0 1 :) ;)      Z_Z return n + factorial(n-1)
+:}
+
+:< result :> :0 <3 factorial :( :0 5 :) ;)     Z_Z result: int = factorial(5)
+:P result ;)                                   Z_Z print(result)

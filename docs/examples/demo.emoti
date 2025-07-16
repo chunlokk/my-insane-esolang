@@ -1,0 +1,36 @@
+Z_Z This is a comment
+
+Z_Z Variable declaration
+:< myNumber :> :0 <3 :0 42 ;)
+
+Z_Z Assignment and operators
+myNumber <3 :0 2 :+) :0 3 *_* :0 5 ;)
+
+Z_Z Inputs and outputs
+:< myInput :> :L <3 O_O ;)
+:P myInput ;)
+
+Z_Z Function declaration
+🤖 factorial :( n :> :0 :) :> :0 :{
+    (╭ರ_•́) n =) :0 0 :{
+        /o/ :0 1 ;)
+    :}
+    /o/ n *_* factorial :( n :-( :0 1 :) ;)
+:}
+
+Z_Z Function call and print
+:P factorial :( :0 5 :) ;)
+
+Z_Z While loop
+:< counter :> :0 <3 :0 0 ;)
+(⸝⸝๑﹏๑⸝⸝) counter <:( :0 5 :{
+    :P counter ;)
+    counter <3 counter :+) :0 1 ;)
+:}
+
+Z_Z Try-catch
+🕷️ :{
+    💥 :L "Something went wrong" ;)
+:} 🕸️ e :{
+    :P :L "Caught error: " ;)
+:}
