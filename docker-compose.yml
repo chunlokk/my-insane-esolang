@@ -1,17 +1,13 @@
-version: '3.8'
-
+version: '3.8' 
+                                                                                                                                          
 services:
   emotilang-playground:
     build: .
-    ports:
-      - "8080:8080"
     environment:
       - FLASK_ENV=production
     volumes:
-      # Mount as read-only for extra security
       - ./src:/app/src:ro
       - ./sly:/app/sly:ro
-    # Security settings
     security_opt:
       - no-new-privileges:true
     cap_drop:
@@ -23,6 +19,13 @@ services:
     networks:
       - emotilang-net
     restart: unless-stopped
+
+  tunnel:
+    image: cloudflare/cloudflared
+    restart: unless-stopped
+    command: tunnel --url http://emotilang-playground:8080
+    networks:
+      - emotilang-net
 
 networks:
   emotilang-net:
