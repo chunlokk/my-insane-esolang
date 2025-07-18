@@ -56,9 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 // Display error
-                debugOutput.textContent = result.debugOutput || 'Unknown error occurred';
+                debugOutput.textContent = result.debug_output || 'Unknown error occurred';
                 debugOutput.className = 'error';
                 transpiledCode.textContent = result.error || 'Error in JavaScript code generation.';
+                transpiledCode.className = 'error';
                 currentJSCode = '';
                 runBtn.disabled = true;
             }
