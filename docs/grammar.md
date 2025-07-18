@@ -75,6 +75,11 @@ CATCH       := 🕸️ // Catch
 THROW       := 💥 // Throw
 ```
 
+### Input/Output Operations
+```
+INPUT         := "O_O"    // Input expression
+```
+
 ### Special Tokens
 ```
 IDENTIFIER    := [a-zA-Z_][a-zA-Z0-9_]*    // Variable/function names
@@ -137,6 +142,26 @@ literal         = SURPRISED NUMBER_VALUE     // Number literal: :0 42
                 | CRYING                     // Boolean false: :'(
 ```
 
+### Expressions  
+```ebnf
+expression      = expression PLUS_HAPPY expression          // Addition: expr :+) expr
+                | expression MINUS_SAD expression           // Subtraction: expr :-( expr
+                | expression STAR_EYES expression           // Multiplication: expr *_* expr
+                | expression SLASH_CONFUSED expression      // Division: expr :/ expr
+                | expression PERCENT_WEIRD expression       // Modulo: expr :% expr
+                | expression EQUAL_TWINS expression         // Equality: expr =) expr
+                | expression NOT_EQUAL expression           // Not equal: expr !( expr
+                | expression GREATER_SMUG expression        // Greater than: expr >:) expr
+                | expression LESS_DOWN expression           // Less than: expr <:( expr
+                | expression AND_TOGETHER expression        // Logical AND: expr &) expr
+                | expression OR_CHOICE expression           // Logical OR: expr |) expr
+                | NOT_OPPOSITE expression                   // Logical NOT: !) expr
+                | IDENTIFIER SAD_OPEN arguments HAPPY_CLOSE // Function call: func :( args :)
+                | IDENTIFIER                                // Variable reference
+                | INPUT                                     // Input expression: O_O
+                | literal                                   // Literal values
+```
+
 ### Parameters and Arguments
 ```ebnf
 parameters      = parameters FIELD_SEP parameter
@@ -152,6 +177,11 @@ arguments       = arguments FIELD_SEP argument
 argument        = expression
 ```
 
+### Blocks
+```ebnf
+block           = CURLY_OPEN statements CURLY_CLOSE    // Block: :{ statements :}
+```
+
 ### Lexical Elements
 ```ebnf
 IDENTIFIER      = [a-zA-Z_][a-zA-Z0-9_]*
@@ -159,10 +189,8 @@ NUMBER_VALUE    = \d+(?:\.\d+)?
 STRING_VALUE    = "[^"]*"
 ```
 
-### Grammar Design Notes for Parser Implementation
-
-#### Precedence and Associativity
-The expression grammar uses the following precedence levels (from lowest to highest):
+### Precedence and Associativity
+Expression precedence (from lowest to highest):
 1. Logical OR (`|)`) - left associative
 2. Logical AND (`&)`) - left associative  
 3. Logical NOT (`!)`) - right associative
@@ -170,24 +198,6 @@ The expression grammar uses the following precedence levels (from lowest to high
 5. Comparison (`>:)`, `<:(`) - left associative
 6. Addition/Subtraction (`:+)`, `:-(`) - left associative
 7. Multiplication/Division/Modulo (`*_*`, `:/`, `:%`) - left associative
-
-#### Parsing Strategy
-- **LR(1) Compatible**: Uses SLY (Python Lex-Yacc) which generates LR parsers
-- **Clear Delimiters**: Blocks use `:{ }:` and function calls use `:( )`
-- **Statement Terminators**: All statements end with `;)` for clear separation
-- **Expression Precedence**: Uses SLY's precedence declarations for operator precedence
-- **Unambiguous Keywords**: Each token has a unique lexical representation
-
-#### Error Recovery Points
-- Statement boundaries (`;)`) provide natural recovery points
-- Block boundaries (`:{ }:`) help with scope-based recovery
-- Function declarations are top-level constructs
-
-#### Lexical Considerations
-- **Longest Match**: Emoticon tokens are matched greedily using regex patterns
-- **Unicode Handling**: Some tokens use Unicode characters (🤖, 🕷️, 🕸️, 💥)
-- **Whitespace**: Implicit whitespace handling between tokens
-- **Comments**: Single-line comments from `Z_Z` to end of line
 
 ### Example Program Structure
 ```emotilang
