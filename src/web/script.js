@@ -56,10 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 // Display error
-                debugOutput.textContent = result.error || 'Unknown error occurred';
+                debugOutput.textContent = result.debugOutput || 'Unknown error occurred';
                 debugOutput.className = 'error';
-                transpiledCode.textContent = '';
+                transpiledCode.textContent = result.error || 'Error in JavaScript code generation.';
                 currentJSCode = '';
+                runBtn.disabled = true;
             }
         } catch (error) {
             debugOutput.textContent = 'Network error: ' + error.message;
