@@ -1,12 +1,7 @@
-# Formal Grammar for My Insane Esolang: EmotiLang 😊
+# Formal Grammar for My Insane Esolang: EmotiLang
 
 ## Overview
-This document defines the formal grammar for **EmotiLang**, an esoteric programming language that uses only emoticons as tokens. The language is designed to be expressive while maintaining the whimsical nature of emoticons.
-
-## Design Philosophy
-- **Emotional State Mapping**: Different emoticon families represent different programming concepts
-- **Visual Intuition**: Emoticons are chosen to visually represent their function
-- **Nested Emotions**: Complex expressions can be built by combining simple emotional states
+This document defines the formal grammar for **EmotiLang**, an esoteric programming language that uses only emoticons as tokens. 
 
 ## Lexical Grammar (Tokens)
 
